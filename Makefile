@@ -39,7 +39,11 @@ Telegram:
 	echo "export PATH=~/.local/Telegram/:$PATH" >> ~/.profile
 
 
-obs:
-	cd /
+
+obs-studio:
+	cd /tmp &&  git clone https\://github.com/GeorgesStavracas/obs-studio.git && cd obs-studio && git checkout feaneron/egl-wayland
+	mkdir -p /tmp/obs-studio/build && cd /tmp/obs-studio/build && cmake -DUNIX_STRUCTURE=1 -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_WAYLAND=true ..
+	cd /tmp/obs-studio/build && make -j4
+	sudo checkinstall --default --pkgname=obs-studio --fstrans=no --backup=no --pkgversion="$(date +%Y%m%d)-git" --deldoc=yes
 
 # end
