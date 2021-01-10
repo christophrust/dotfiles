@@ -16,10 +16,16 @@ dotfiles:
 rust:
 	cd /tmp && curl --proto '=https' --tlsv1.2 -sSf https\://sh.rustup.rs | sh
 
+forticlient:
+	mkdir -p ~/.fctsslvpn_trustca
+	wget https://pki.uni-regensburg.de/certs/DFNCA2/zertifikatskette_uni_r_ca2.pem -O ~/.fctsslvpn_trustca/fullchain.pem
+	sudo cp aux/urvpn /usr/local/bin/
+	sudo chmod +x /usr/local/bin/urvpn
+
 
 
 alacritty:
-	cd /tmp && git clone https\://github.com/alacritty/alacritty.git
+	cd /tmp && git clone https\://github.com/alacritty/alacritty.git && cd alacritty && git checkout v0.5.0
 	cd /tmp/alacritty && cargo build --release
 
 
@@ -42,8 +48,40 @@ Telegram:
 
 obs-studio:
 	cd /tmp &&  git clone https\://github.com/GeorgesStavracas/obs-studio.git && cd obs-studio && git checkout feaneron/egl-wayland
-	mkdir -p /tmp/obs-studio/build && cd /tmp/obs-studio/build && cmake -DUNIX_STRUCTURE=1 -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_WAYLAND=true ..
-	cd /tmp/obs-studio/build && make -j4
-	sudo checkinstall --default --pkgname=obs-studio --fstrans=no --backup=no --pkgversion="$(date +%Y%m%d)-git" --deldoc=yes
+	mkdir -p /tmp/obs-studio/build && cd /tmp/obs-studio/build && cmake -DUNIX_STRUCTURE=0 -DCMAKE_INSTALL_PREFIX=${HOME}/obs-studio -DENABLE_WAYLAND=true ..
+	cd /tmp/obs-studio/build && make -j4 && make install
+	echo "cd ~/obs-studio/bin/64bit/ && exec ./obs @" | sudo tee /usr/local/bin/obs-wayland
+	sudo chmod +x /usr/local/bin/obs-wayland
 
+wlrobs:
+	cd /tmp && hg clone https://hg.sr.ht/~scoopta/wlrobs
+	cd /tmp/wlrobs && meson build && ninja -C build
+	mkdir -p ~/.config/obs-studio/plugins/wlrobs/bin/64bit
+	cp /tmp/wlrobs/build/libwlrobs.so ~/.config/obs-studio/plugins/wlrobs/bin/64bit
+
+obs-v4l2sink:
+	cd /tmp & git clone https\://github.com/CatxFish/obs-v4l2sink.git
+	mkdir -p /tmp/obs-v4l2sink/build
+	cd /tmp/obs-v4l2sink/build && cmake -DLIBOBS_INCLUDE_DIR="../../obs-studio/libobs" -DCMAKE_INSTALL_PREFIX=/home/cgr/.local ..
+	cd /tmp/obs-v4l2sink/build && make -j4
+
+##xournalpp:
+##	cd /tmp && wget https\://github.com/xournalpp/xournalpp/releases/download/1.0.20/xournalpp-1.0.20-Debian-buster-x86_64.deb
+##	cd /tmp && wget https\://github.com/xournalpp/xournalpp/releases/download/1.0.20-hotfix/xournalpp-1.0.20-hotfix-hotfix-Debian-buster-x86_64.deb
+
+r-tmap:
+	R -e "install.packages('tmap')"
+
+
+tdrop:
+	cd /tmp && git clone https\://github.com/noctuid/tdrop.git
+	cd /tmp/tdrop && sudo make install
 # end
+
+
+stata:
+	tar -xf ~/Dropbox/Linux/stata/Stata14Linux64.tar.gz
+	mkdir -p stata14
+	cd stata14 && tar -xf ../unix/linux.64/bins.taz && tar -xf ../unix/linux.64/ado.taz && tar -xf ../unix/linux.64/base.taz && tar -xf ../unix/linux.64/docs.taz
+	sudo mv -r stata14 /usr/local/
+	sudo cp ~/Dropbox/Linux/stata/stata.lic /usr/local/stata14/stata.lic
