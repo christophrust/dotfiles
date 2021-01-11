@@ -83,5 +83,5 @@ stata:
 	tar -xf ~/Dropbox/Linux/stata/Stata14Linux64.tar.gz
 	mkdir -p stata14
 	cd stata14 && tar -xf ../unix/linux.64/bins.taz && tar -xf ../unix/linux.64/ado.taz && tar -xf ../unix/linux.64/base.taz && tar -xf ../unix/linux.64/docs.taz
-	sudo mv -r stata14 /usr/local/
+	sudo mv stata14 /usr/local/
 	sudo cp ~/Dropbox/Linux/stata/stata.lic /usr/local/stata14/stata.lic
