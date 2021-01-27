@@ -85,3 +85,13 @@ stata:
 	cd stata14 && tar -xf ../unix/linux.64/bins.taz && tar -xf ../unix/linux.64/ado.taz && tar -xf ../unix/linux.64/base.taz && tar -xf ../unix/linux.64/docs.taz
 	sudo mv stata14 /usr/local/
 	sudo cp ~/Dropbox/Linux/stata/stata.lic /usr/local/stata14/stata.lic
+
+
+osrm:
+	cd /tmp && git clone https://github.com/Project-OSRM/osrm-backend.git
+	cd /tmp/osrm-backend && git checkout v5.23.0
+	mkdir -p /tmp/osrm-backend/build
+	cd /tmp/osrm-backend/build && cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON && cmake --build .
+
+osrm-install:
+	cd /tmp/osrm-backend/build && sudo cmake --build . --target install
