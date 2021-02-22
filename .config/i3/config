@@ -185,7 +185,7 @@ bar {
 #increase/decrease sound volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ +5%"
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ -5%"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle # toggle microphone
 
 # Sreen brightness controls
@@ -200,11 +200,16 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-  # decrease screen brig
 
 ## autostart
 exec --no-startup-id "dropbox start"
-#exec --no-startup-id "guake"
-bindsym F12 exec --no-startup-id "tdrop -ma -w -0 -h -0 -y 0% alacritty"
-bindsym $mod+Shift+s exec --no-startup-id "gnome-screenshot -a -c"
 exec --no-startup-id "nextcloud"
+
+## dropdown terminal
+# Add this to your i3 config (~/.config/i3/config) and restart i3 (Super+Shift+R)
+exec --no-startup-id "alacritty"
+for_window [class="Alacritty"] move scratchpad, move position 0 0, resize set 1920 1080;
+bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show;
+
 
 ## move workspace to right screen
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p move workspace to output left
+bindsym $mod+Shift+d exec --no-startup-id "gnome-screenshot -a --file=/tmp/gs2241.png && xclip -selection clipboard -target image/png /tmp/gs2241.png"
