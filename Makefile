@@ -3,12 +3,15 @@
 #
 # @file
 # @version 0.1
+THIS_DIR := $(dir $(abspath $(firstword $(MAKEFILE_LIST))))
+
 .PHONY: rust deb-packages alacritty alacritty-install Telegram
 
 deb-packages:
 	grep "^[^#;]" .debian-packages.conf | xargs sudo apt -y install
 
 dotfiles:
+	ln -fs $THIS_DIR~/.config/i3/config config/i3/config
 	cp -r $(ls -a | grep "^\.[a-zA-Z]") ~/
 
 
