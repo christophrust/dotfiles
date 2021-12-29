@@ -1,1 +1,34 @@
-* dotfiles
+* Dotfiles
+
+This repo contains most of my dotfiles and, in this readme, a brief documentation of the installation of the basic setup. Prior to going through these steps, all hardware-specific packages should already be installed. Then the steps of this org file should provide at least a basic setup. However, I try to keep this repo up-to-date with my running setup.
+
+** Basic installation
+
+#+begin_src shell
+apt-get install i3 git vim emacs ripgrep tmux zathura nextcloud-desktop pass \
+    curl htop ffmpeg aspell-en cmake pkg-config pavucontrol fd-find
+#+end_src
+
+** Quick setup
+
+The following setup installs some core tools and links the corresponding configuration files for ~tmux~, ~i3~, ~i3-status~, ~vim~,...
+
+#+begin_src shell
+git clone https://github.com/christophrust/dotfiles
+stow i3
+stow i3status
+stow vim
+stow tmux
+#+end_src
+
+
+** Emacs
+
+For emacs, I currently use doom emacs and have the corresponding configuration file in a single repo, [[https://github.com/christophrust/.doom.d][.doom.d]]. To install doom, do
+
+#+begin_src shell
+rm -r ~/.emacs.d
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+git clone https://github.com/christophrust/.doom.d/ ~/.doom.d
+~/.emacs.d/bin/doom sync
+#+end_src
