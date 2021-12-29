@@ -19,6 +19,35 @@ stow i3
 stow i3status
 stow vim
 stow tmux
+stow alacritty
+#+end_src
+
+** Rust
+
+#+begin_src shell
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#+end_src
+
+** Alacritty
+
+Installation instructions for [[https://github.com/alacritty/alacritty][Alacritty]] change from time to time. For my last installation I did
+
+#+begin_src shell
+apt-get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev \
+    libxkbcommon-dev python3
+cargo install alacritty
+#+end_src
+
+
+** GNU R
+
+I do not use the packages contained in debian stable but rather use the one provided by
+
+#+begin_src shell
+echo "deb http://cloud.r-project.org/bin/linux/debian bullseye-cran40/" | \
+    sudo tee /etc/apt/sources.list.d/r-base.list
+sudo apt update
+sudo apt install r-base r-cran-tidyverse
 #+end_src
 
 
