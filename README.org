@@ -5,11 +5,14 @@ This repo contains most of my dotfiles and, in this readme, a brief documentatio
 ** Basic installation
 
 #+begin_src shell
-apt-get install i3 git vim emacs ripgrep tmux zathura nextcloud-desktop pass \
+sudo apt-get install i3 git vim emacs ripgrep tmux zathura nextcloud-desktop pass \
     curl htop ffmpeg aspell-en cmake pkg-config pavucontrol fd-find
 #+end_src
 
-** Quick setup
+** Install gdk themes
+
+
+** Basic setup
 
 The following setup installs some core tools and links the corresponding configuration files for ~tmux~, ~i3~, ~i3-status~, ~vim~,...
 
@@ -21,6 +24,7 @@ stow vim
 stow tmux
 stow alacritty
 #+end_src
+
 
 ** Rust
 
@@ -35,9 +39,20 @@ Installation instructions for [[https://github.com/alacritty/alacritty][Alacritt
 #+begin_src shell
 apt-get install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev \
     libxkbcommon-dev python3
-cargo install alacritty
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty && cargo install alacritty
 #+end_src
 
+
+** i3status-rust
+
+#+begin_src shell
+sudo apt-get install libssl-dev libdbus-1-dev
+cd ~/.local/share/applications && git clone https://github.com/greshake/i3status-rust
+cd i3status-rust
+cargo install --path .
+./install.sh
+#+end_src
 
 ** GNU R
 
