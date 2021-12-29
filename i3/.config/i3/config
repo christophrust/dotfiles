@@ -176,8 +176,10 @@ bar {
         position bottom
         tray_output HDMI-0
         mode hide
+        modifier Mod1
 }
 
+bindsym $mod+m bar mode toggle
 
 
 
@@ -217,3 +219,16 @@ bindsym F12 [class="Alacritty"] scratchpad show;
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p move workspace to output left
 bindsym $mod+Shift+d exec --no-startup-id "gnome-screenshot -a --file=/tmp/gs2241.png && xclip -selection clipboard -target image/png /tmp/gs2241.png"
+
+
+
+## colors
+# class                 border  backgr. text    indicator child_border
+#client.focused          #081221 #0f2443 #97bac4 #2e9ef4   #081221
+client.focused          #1a1e23 #343c46 #8a97a8 #2e9ef4   #081221
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
