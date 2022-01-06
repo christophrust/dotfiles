@@ -221,9 +221,11 @@ exec --no-startup-id "setxkbmap -layout us,de,ru && setxkbmap -option 'grp:shift
 ## dropdown terminal
 # Add this to your i3 config (~/.config/i3/config) and restart i3 (Super+Shift+R)
 exec --no-startup-id "alacritty"
-for_window [class="Alacritty"] move scratchpad, move position 0 0, resize set 1920 1080, border none
+for_window [class="Alacritty"] move scratchpad, resize set 2560 1440, border none
+## for_window [class="Alacritty"] move scratchpad, move position mouse , resize set 2560 1440, border none
+
 ##bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show;
-bindsym F12 [class="Alacritty"] scratchpad show;
+bindsym F12 [class="Alacritty"] scratchpad show, move position 1920 0
 
 
 ## move workspace to right screen
