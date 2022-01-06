@@ -171,12 +171,23 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        ## status_command i3status
-        status_command i3status-rs
-        position bottom
-        tray_output HDMI-0
-        mode hide
-        modifier Mod1
+    ## status_command i3status
+    status_command i3status-rs
+    position bottom
+    tray_output HDMI-0
+    mode hide
+    modifier none
+    colors {
+           background #000000
+           statusline #ffffff
+           separator #666666
+
+           focused_workspace  #4c7899 #222222 #97bac4
+           active_workspace   #1a1e23 #343c46 #8a97a8
+           inactive_workspace #333333 #222222 #888888
+           urgent_workspace   #2f343a #900000 #ffffff
+           binding_mode       #2f343a #900000 #ffffff
+        }
 }
 
 bindsym $mod+m bar mode toggle
@@ -225,8 +236,8 @@ bindsym $mod+Shift+d exec --no-startup-id "gnome-screenshot -a --file=/tmp/gs224
 ## colors
 # class                 border  backgr. text    indicator child_border
 #client.focused          #081221 #0f2443 #97bac4 #2e9ef4   #081221
-client.focused          #1a1e23 #343c46 #8a97a8 #2e9ef4   #081221
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.focused          #1a1e23 #343c46 #bbbbbb #2e9ef4   #122241
+client.focused_inactive #1a1e23 #343c46 #8291a1 #484e50   #081221
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
