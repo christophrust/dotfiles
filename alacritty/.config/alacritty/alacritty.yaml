@@ -91,7 +91,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
+  gtk_theme_variant: dark
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -173,7 +173,7 @@ window:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
 #colors:
