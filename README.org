@@ -23,6 +23,7 @@ stow i3status
 stow vim
 stow tmux
 stow alacritty
+stow mbsync
 #+end_src
 
 
