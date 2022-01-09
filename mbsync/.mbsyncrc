@@ -137,11 +137,32 @@ Path ~/Mail/wu/
 Inbox ~/Mail/wu/INBOX
 Subfolders Verbatim
 
-
 Channel WU
 Master :WU-remote:
 Slave :WU-local:
-Patterns "INBOX" "Sent Items" "Work In Progress" "Trash"
+Patterns *
+Create Slave
+Expunge Both
+CopyArrivalDate yes
+
+
+## AI-Automatica
+IMAPStore AIA-remote
+Host imap.ai-automatica.com
+SSLType IMAPS
+AuthMechs LOGIN
+User rust@ai-automatica.com
+PassCmd "pass email/rust@ai-automatica.com"
+
+MaildirStore AIA-local
+Path ~/Mail/ai-automatica/
+Inbox ~/Mail/ai-automatica/INBOX
+Subfolders Verbatim
+
+Channel AIA
+Master :AIA-remote:
+Slave :AIA-local:
+Patterns *
 Create Slave
 Expunge Both
 CopyArrivalDate yes
