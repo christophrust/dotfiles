@@ -1,0 +1,147 @@
+IMAPStore Gmail-remote
+Host imap.gmail.com
+SSLType IMAPS
+AuthMechs LOGIN
+User christoph.g.rust@gmail.com
+PassCmd "pass email/mbsync@gmail.com"
+
+MaildirStore Gmail-local
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+Subfolders Verbatim
+
+
+Channel Gmail-inbox
+Master :Gmail-remote:"INBOX"
+Slave :Gmail-local:"INBOX"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-trash
+Master :Gmail-remote:"[Google Mail]/Bin"
+Slave :Gmail-local:"Trash"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-sent
+Master :Gmail-remote:"[Google Mail]/Sent Mail"
+Slave :Gmail-local:"Sent"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-spam
+Master :Gmail-remote:"[Google Mail]/Spam"
+Slave :Gmail-local:"Spam"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-drafts
+Master :Gmail-remote:"[Google Mail]/Drafts"
+Slave :Gmail-local:"Drafts"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Group Gmail
+Channel Gmail-inbox
+Channel Gmail-trash
+Channel Gmail-sent
+Channel Gmail-spam
+Channel Gmail-drafts
+
+
+
+## Uni Regensburg
+IMAPStore UR-remote
+Host imap.uni-regensburg.de
+SSLType IMAPS
+AuthMechs LOGIN
+User chr07774
+PassCmd "pass uni-stuff/rz-account"
+
+MaildirStore UR-local
+Path ~/Mail/ur/
+Inbox ~/Mail/ur/INBOX
+Subfolders Verbatim
+
+
+Channel UR
+Master :UR-remote:
+Slave :UR-local:
+Patterns "INBOX" "Sent Items" "Work In Progress" "Trash"
+Create Slave
+Expunge Both
+CopyArrivalDate yes
+
+# Channel UR-inbox
+# Master :UR-remote:"INBOX"
+# Slave :UR-local:"INBOX"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-drafts
+# Master :UR-remote:"Work In Progress"
+# Slave :UR-local:"Drafts"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-sent
+# Master :UR-remote:"Sent Items"
+# Slave :UR-local:"Sent"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-trash
+# Master :UR-remote:"Trash"
+# Slave :UR-local:"Trash"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+
+# Group UR
+# Channel UR-inbox
+# Channel UR-trash
+# Channel UR-sent
+# Channel UR-drafts
+
+
+
+
+## WU account
+IMAPStore WU-remote
+Host sslmail.wu.ac.at
+SSLType IMAPS
+AuthMechs LOGIN
+User crust
+PassCmd "pass uni-stuff/crust@wu.ac.at"
+
+MaildirStore WU-local
+Path ~/Mail/wu/
+Inbox ~/Mail/wu/INBOX
+Subfolders Verbatim
+
+
+Channel WU
+Master :WU-remote:
+Slave :WU-local:
+Patterns "INBOX" "Sent Items" "Work In Progress" "Trash"
+Create Slave
+Expunge Both
+CopyArrivalDate yes
