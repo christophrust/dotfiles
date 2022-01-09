@@ -166,3 +166,66 @@ Patterns *
 Create Slave
 Expunge Both
 CopyArrivalDate yes
+
+
+
+## IREEN
+IMAPStore IREEN-remote
+Host imap.gmail.com
+SSLType IMAPS
+AuthMechs LOGIN
+User cr@ireen24.com
+PassCmd "pass email/mbsync@cr@ireen24.com"
+
+MaildirStore IREEN-local
+Path ~/Mail/ireen/
+Inbox ~/Mail/ireen/INBOX
+Subfolders Verbatim
+
+
+Channel IREEN-inbox
+Master :IREEN-remote:"INBOX"
+Slave :IREEN-local:"INBOX"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-trash
+Master :IREEN-remote:"[Gmail]/Bin"
+Slave :IREEN-local:"Trash"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-sent
+Master :IREEN-remote:"[Gmail]/Sent Mail"
+Slave :IREEN-local:"Sent"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-spam
+Master :IREEN-remote:"[Gmail]/Spam"
+Slave :IREEN-local:"Spam"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-drafts
+Master :IREEN-remote:"[Gmail]/Drafts"
+Slave :IREEN-local:"Drafts"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Group IREEN
+Channel IREEN-inbox
+Channel IREEN-trash
+Channel IREEN-sent
+Channel IREEN-spam
+Channel IREEN-drafts
