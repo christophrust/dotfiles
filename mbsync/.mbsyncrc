@@ -1,0 +1,247 @@
+IMAPStore Gmail-remote
+Host imap.gmail.com
+SSLType IMAPS
+AuthMechs LOGIN
+User christoph.g.rust@gmail.com
+PassCmd "pass email/mbsync@gmail.com"
+
+MaildirStore Gmail-local
+Path ~/Mail/gmail/
+Inbox ~/Mail/gmail/INBOX
+Subfolders Verbatim
+
+
+Channel Gmail-inbox
+Master :Gmail-remote:"INBOX"
+Slave :Gmail-local:"INBOX"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-trash
+Master :Gmail-remote:"[Google Mail]/Bin"
+Slave :Gmail-local:"Trash"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-sent
+Master :Gmail-remote:"[Google Mail]/Sent Mail"
+Slave :Gmail-local:"Sent"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-spam
+Master :Gmail-remote:"[Google Mail]/Spam"
+Slave :Gmail-local:"Spam"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel Gmail-drafts
+Master :Gmail-remote:"[Google Mail]/Drafts"
+Slave :Gmail-local:"Drafts"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Group Gmail
+Channel Gmail-inbox
+Channel Gmail-trash
+Channel Gmail-sent
+Channel Gmail-spam
+Channel Gmail-drafts
+
+
+
+## Uni Regensburg
+IMAPStore UR-remote
+Host imap.uni-regensburg.de
+SSLType IMAPS
+AuthMechs LOGIN
+User chr07774
+PassCmd "pass uni-stuff/rz-account"
+
+MaildirStore UR-local
+Path ~/Mail/ur/
+Inbox ~/Mail/ur/INBOX
+Subfolders Verbatim
+
+
+Channel UR
+Master :UR-remote:
+Slave :UR-local:
+Patterns "INBOX" "Sent Items" "Work In Progress" "Trash"
+Create Slave
+Expunge Both
+CopyArrivalDate yes
+
+# Channel UR-inbox
+# Master :UR-remote:"INBOX"
+# Slave :UR-local:"INBOX"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-drafts
+# Master :UR-remote:"Work In Progress"
+# Slave :UR-local:"Drafts"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-sent
+# Master :UR-remote:"Sent Items"
+# Slave :UR-local:"Sent"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+# Channel UR-trash
+# Master :UR-remote:"Trash"
+# Slave :UR-local:"Trash"
+# CopyArrivalDate yes
+# Create Both
+# Expunge Both
+# SyncState *
+
+
+# Group UR
+# Channel UR-inbox
+# Channel UR-trash
+# Channel UR-sent
+# Channel UR-drafts
+
+
+
+
+## WU account
+IMAPStore WU-remote
+Host sslmail.wu.ac.at
+SSLType IMAPS
+AuthMechs LOGIN
+User crust
+PassCmd "pass uni-stuff/crust@wu.ac.at"
+
+MaildirStore WU-local
+Path ~/Mail/wu/
+Inbox ~/Mail/wu/INBOX
+Subfolders Verbatim
+
+Channel WU
+Master :WU-remote:
+Slave :WU-local:
+Patterns *
+Create Slave
+Expunge Both
+CopyArrivalDate yes
+
+
+## AI-Automatica
+IMAPStore AIA-remote
+Host imap.ai-automatica.com
+SSLType IMAPS
+AuthMechs LOGIN
+User rust@ai-automatica.com
+PassCmd "pass email/rust@ai-automatica.com"
+
+MaildirStore AIA-local
+Path ~/Mail/ai-automatica/
+Inbox ~/Mail/ai-automatica/INBOX
+Subfolders Verbatim
+
+Channel AIA
+Master :AIA-remote:
+Slave :AIA-local:
+Patterns *
+Create Slave
+Expunge Both
+CopyArrivalDate yes
+
+
+
+## IREEN
+IMAPStore IREEN-remote
+Host imap.gmail.com
+SSLType IMAPS
+AuthMechs LOGIN
+User cr@ireen24.com
+PassCmd "pass email/mbsync@cr@ireen24.com"
+
+MaildirStore IREEN-local
+Path ~/Mail/ireen/
+Inbox ~/Mail/ireen/INBOX
+Subfolders Verbatim
+
+
+Channel IREEN-inbox
+Master :IREEN-remote:"INBOX"
+Slave :IREEN-local:"INBOX"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-trash
+Master :IREEN-remote:"[Gmail]/Bin"
+Slave :IREEN-local:"Trash"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-sent
+Master :IREEN-remote:"[Gmail]/Sent Mail"
+Slave :IREEN-local:"Sent"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-spam
+Master :IREEN-remote:"[Gmail]/Spam"
+Slave :IREEN-local:"Spam"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Channel IREEN-drafts
+Master :IREEN-remote:"[Gmail]/Drafts"
+Slave :IREEN-local:"Drafts"
+CopyArrivalDate yes
+Create Both
+Expunge Both
+SyncState *
+
+Group IREEN
+Channel IREEN-inbox
+Channel IREEN-trash
+Channel IREEN-sent
+Channel IREEN-spam
+Channel IREEN-drafts
+
+
+Group all
+Channel IREEN-inbox
+Channel IREEN-trash
+Channel IREEN-sent
+Channel IREEN-spam
+Channel IREEN-drafts
+Channel Gmail-inbox
+Channel Gmail-trash
+Channel Gmail-sent
+Channel Gmail-spam
+Channel Gmail-drafts
+Channel UR
+Channel WU
+Channel AIA
