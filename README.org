@@ -24,6 +24,7 @@ stow vim
 stow tmux
 stow alacritty
 stow mbsync
+stow msmtp
 #+end_src
 
 
