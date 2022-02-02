@@ -231,7 +231,7 @@ bindsym F12 [class="Alacritty"] scratchpad show, move position 0 0
 ## move workspace to right screen
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p move workspace to output left
-bindsym $mod+Shift+d exec --no-startup-id "gnome-screenshot -a --file=/tmp/gs2241.png && xclip -selection clipboard -target image/png /tmp/gs2241.png"
+bindsym $mod+Shift+d --release exec --no-startup-id "scrot -s -o /tmp/gs2241.png -e 'xclip -selection clipboard -target image/png $f'"
 
 
 
