@@ -12,40 +12,40 @@ Subfolders Verbatim
 
 
 Channel Gmail-inbox
-Master :Gmail-remote:"INBOX"
-Slave :Gmail-local:"INBOX"
+Far :Gmail-remote:"INBOX"
+Near :Gmail-local:"INBOX"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel Gmail-trash
-Master :Gmail-remote:"[Google Mail]/Bin"
-Slave :Gmail-local:"Trash"
+Far :Gmail-remote:"[Google Mail]/Bin"
+Near :Gmail-local:"Trash"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel Gmail-sent
-Master :Gmail-remote:"[Google Mail]/Sent Mail"
-Slave :Gmail-local:"Sent"
+Far :Gmail-remote:"[Google Mail]/Sent Mail"
+Near :Gmail-local:"Sent"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel Gmail-spam
-Master :Gmail-remote:"[Google Mail]/Spam"
-Slave :Gmail-local:"Spam"
+Far :Gmail-remote:"[Google Mail]/Spam"
+Near :Gmail-local:"Spam"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel Gmail-drafts
-Master :Gmail-remote:"[Google Mail]/Drafts"
-Slave :Gmail-local:"Drafts"
+Far :Gmail-remote:"[Google Mail]/Drafts"
+Near :Gmail-local:"Drafts"
 CopyArrivalDate yes
 Create Both
 Expunge Both
@@ -75,40 +75,41 @@ Subfolders Verbatim
 
 
 Channel UR
-Master :UR-remote:
-Slave :UR-local:
+Far :UR-remote:
+Near :UR-local:
 Patterns "INBOX" "Sent Items" "Work In Progress" "Trash"
-Create Slave
+Create Near
 Expunge Both
+SyncState *
 CopyArrivalDate yes
 
 # Channel UR-inbox
-# Master :UR-remote:"INBOX"
-# Slave :UR-local:"INBOX"
+# Far :UR-remote:"INBOX"
+# Near :UR-local:"INBOX"
 # CopyArrivalDate yes
 # Create Both
 # Expunge Both
 # SyncState *
 
 # Channel UR-drafts
-# Master :UR-remote:"Work In Progress"
-# Slave :UR-local:"Drafts"
+# Far :UR-remote:"Work In Progress"
+# Near :UR-local:"Drafts"
 # CopyArrivalDate yes
 # Create Both
 # Expunge Both
 # SyncState *
 
 # Channel UR-sent
-# Master :UR-remote:"Sent Items"
-# Slave :UR-local:"Sent"
+# Far :UR-remote:"Sent Items"
+# Near :UR-local:"Sent"
 # CopyArrivalDate yes
 # Create Both
 # Expunge Both
 # SyncState *
 
 # Channel UR-trash
-# Master :UR-remote:"Trash"
-# Slave :UR-local:"Trash"
+# Far :UR-remote:"Trash"
+# Near :UR-local:"Trash"
 # CopyArrivalDate yes
 # Create Both
 # Expunge Both
@@ -138,10 +139,10 @@ Inbox ~/Mail/wu/INBOX
 Subfolders Verbatim
 
 Channel WU
-Master :WU-remote:
-Slave :WU-local:
+Far :WU-remote:
+Near :WU-local:
 Patterns *
-Create Slave
+Create Near
 Expunge Both
 CopyArrivalDate yes
 
@@ -160,10 +161,10 @@ Inbox ~/Mail/ai-automatica/INBOX
 Subfolders Verbatim
 
 Channel AIA
-Master :AIA-remote:
-Slave :AIA-local:
+Far :AIA-remote:
+Near :AIA-local:
 Patterns *
-Create Slave
+Create Near
 Expunge Both
 CopyArrivalDate yes
 
@@ -174,7 +175,7 @@ IMAPStore IREEN-remote
 Host imap.gmail.com
 SSLType IMAPS
 AuthMechs LOGIN
-User cr@ireen24.com
+User cr@ireen.com
 PassCmd "pass email/mbsync@cr@ireen24.com"
 
 MaildirStore IREEN-local
@@ -184,40 +185,40 @@ Subfolders Verbatim
 
 
 Channel IREEN-inbox
-Master :IREEN-remote:"INBOX"
-Slave :IREEN-local:"INBOX"
+Far :IREEN-remote:"INBOX"
+Near :IREEN-local:"INBOX"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel IREEN-trash
-Master :IREEN-remote:"[Gmail]/Bin"
-Slave :IREEN-local:"Trash"
+Far :IREEN-remote:"[Gmail]/Bin"
+Near :IREEN-local:"Trash"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel IREEN-sent
-Master :IREEN-remote:"[Gmail]/Sent Mail"
-Slave :IREEN-local:"Sent"
+Far :IREEN-remote:"[Gmail]/Sent Mail"
+Near :IREEN-local:"Sent"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel IREEN-spam
-Master :IREEN-remote:"[Gmail]/Spam"
-Slave :IREEN-local:"Spam"
+Far :IREEN-remote:"[Gmail]/Spam"
+Near :IREEN-local:"Spam"
 CopyArrivalDate yes
 Create Both
 Expunge Both
 SyncState *
 
 Channel IREEN-drafts
-Master :IREEN-remote:"[Gmail]/Drafts"
-Slave :IREEN-local:"Drafts"
+Far :IREEN-remote:"[Gmail]/Drafts"
+Near :IREEN-local:"Drafts"
 CopyArrivalDate yes
 Create Both
 Expunge Both
