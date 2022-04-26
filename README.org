@@ -25,6 +25,8 @@ stow tmux
 stow alacritty
 stow mbsync
 stow msmtp
+stow git
+stow gnupg
 #+end_src
 
 
