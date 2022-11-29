@@ -36,13 +36,13 @@ disk "/home" {
 }
 
 ethernet enp0s31f6 {
-        format_up = "<span background='#6f5a85'> Eth: %ip at %speed </span>"
-        format_down = "<span background='#88c0d0'>  Eth: Disconnected </span>"
+        format_up = "<span background='#6f5a85'> Eth: %ip at %speed </span>"
+        format_down = "<span background='#88c0d0'>  Eth: Disconnected </span>"
 }
 
 wireless wlp4s0 {
-        format_up = "<span background='#6f5a85'> WiFi: %quality at %ip with %bitrate </span>"
-        format_down = "<span background='#88c0d0'>  Wifi: Disconnected </span>"
+        format_up = "<span background='#6f5a85'> WiFi: %quality at %ip with %bitrate </span>"
+        format_down = "<span background='#88c0d0'>  Wifi: Disconnected </span>"
 }
 
 
@@ -68,6 +68,7 @@ battery all {
 }
 
 tztime local {
-       format = "<span background='#00441b'> %time </span>"
-       format_time = "Date: %-d %b %H:%M"
+       format = "<span background='#00441b'> Date: %-d %b %H:%M </span>"
+       #format_time = "Date: %-d %b %H:%M"
+       ##format_time = "Date: bd %H:%M"
  }
