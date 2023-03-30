@@ -224,8 +224,8 @@ exec --no-startup-id "alacritty"
 for_window [class="Alacritty"] move scratchpad, resize set 2560 1440, border none
 ## for_window [class="Alacritty"] move scratchpad, move position mouse , resize set 2560 1440, border none
 
-##bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show;
-bindsym F12 [class="Alacritty"] scratchpad show, move position 0 0
+bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show;
+#bindsym F12 [class="Alacritty"] scratchpad show, move position 0 0
 
 
 ## move workspace to right screen
