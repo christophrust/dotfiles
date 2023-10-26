@@ -66,7 +66,7 @@ Host imap.uni-regensburg.de
 SSLType IMAPS
 AuthMechs LOGIN
 User chr07774
-PassCmd "pass uni-stuff/rz-account"
+PassCmd "pass uni-stuff/uni-regensburg.de/chr07774"
 
 MaildirStore UR-local
 Path ~/Mail/ur/
@@ -243,6 +243,6 @@ Channel Gmail-trash
 Channel Gmail-sent
 Channel Gmail-spam
 Channel Gmail-drafts
-# Channel UR
+Channel UR
 Channel WU
 Channel AIA
