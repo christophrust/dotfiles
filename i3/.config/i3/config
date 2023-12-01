@@ -215,6 +215,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-  # decrease screen brig
 ## autostart
 ## exec --no-startup-id "dropbox start"
 exec --no-startup-id "nextcloud"
+exec --no-startup-id "setxkbmap de"
 exec --no-startup-id "setxkbmap -layout us,de,ru && setxkbmap -option 'grp:shifts_toggle'"
 # exec --no-startup-id "xrandr --output DP-0 --left-of HDMI-0"
 
@@ -222,7 +223,7 @@ exec --no-startup-id "setxkbmap -layout us,de,ru && setxkbmap -option 'grp:shift
 ## dropdown terminal
 # Add this to your i3 config (~/.config/i3/config) and restart i3 (Super+Shift+R)
 exec --no-startup-id "alacritty"
-for_window [class="Alacritty"] move scratchpad, resize set 2560 1440, border none
+for_window [class="Alacritty"] move scratchpad, resize set 1920 1200, border none
 ## for_window [class="Alacritty"] move scratchpad, move position mouse , resize set 2560 1440, border none
 
 bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show, move position 0 0;
