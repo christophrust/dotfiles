@@ -169,6 +169,26 @@ Expunge Both
 CopyArrivalDate yes
 
 
+## dev-threads
+IMAPStore DT-remote
+Host w019ee00.kasserver.com
+SSLType IMAPS
+AuthMechs LOGIN
+User m06c72a8
+PassCmd "pass email/dev-threads.de/c.rust@dev-threads.de"
+
+MaildirStore DT-local
+Path ~/Mail/DT/
+Inbox ~/Mail/DT/INBOX
+Subfolders Verbatim
+
+Channel DT
+Far :DT-remote:
+Near :DT-local:
+Patterns *
+Create Near
+Expunge Both
+CopyArrivalDate yes
 
 ## IREEN
 IMAPStore IREEN-remote
@@ -230,6 +250,8 @@ Channel IREEN-trash
 Channel IREEN-sent
 Channel IREEN-spam
 Channel IREEN-drafts
+
+
 
 
 Group all
