@@ -78,7 +78,6 @@ For emacs, I currently use doom emacs and have the corresponding configuration f
 
 #+begin_src shell
 rm -r ~/.emacs.d
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-git clone https://github.com/christophrust/.doom.d/ ~/.doom.d
-~/.emacs.d/bin/doom sync
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/emacs
+.config/emacs/bin/doom install
 #+end_src
