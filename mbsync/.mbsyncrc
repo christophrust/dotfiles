@@ -178,8 +178,8 @@ User m06c72a8
 PassCmd "pass email/dev-threads.de/c.rust@dev-threads.de"
 
 MaildirStore DT-local
-Path ~/Mail/DT/
-Inbox ~/Mail/DT/INBOX
+Path ~/Mail/dt/
+Inbox ~/Mail/dt/INBOX
 Subfolders Verbatim
 
 Channel DT
