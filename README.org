@@ -6,7 +6,8 @@ This repo contains most of my dotfiles and, in this readme, a brief documentatio
 
 #+begin_src shell
 sudo apt-get install i3 git vim emacs ripgrep tmux zathura nextcloud-desktop pass \
-    curl htop ffmpeg aspell-en cmake pkg-config pavucontrol fd-find
+    curl htop ffmpeg aspell-en cmake pkg-config pavucontrol fd-find mbsync \
+    fonts-font-awesome
 #+end_src
 
 ** Install gdk themes
@@ -19,7 +20,7 @@ The following setup installs some core tools and links the corresponding configu
 #+begin_src shell
 git clone https://github.com/christophrust/dotfiles
 stow i3
-stow i3status
+stow i3status-rust
 stow vim
 stow tmux
 stow alacritty
@@ -27,6 +28,7 @@ stow mbsync
 stow msmtp
 stow git
 stow gnupg
+stow doom
 #+end_src
 
 
@@ -51,10 +53,10 @@ cd alacritty && cargo install alacritty
 ** i3status-rust
 
 #+begin_src shell
-sudo apt-get install libssl-dev libdbus-1-dev
+sudo apt-get install libssl-dev libdbus-1-dev pandoc
 cd ~/.local/share/applications && git clone https://github.com/greshake/i3status-rust
 cd i3status-rust
-cargo install --path .
+cargo install --path . --locked --features notmuch --features maildir
 ./install.sh
 #+end_src
 
