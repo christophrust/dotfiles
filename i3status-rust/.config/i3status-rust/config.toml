@@ -35,6 +35,11 @@ block = "memory"
 format = " $icon_swap $swap_used_percents.eng(w:2) "
 
 
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+
 
 
 [[block]]
