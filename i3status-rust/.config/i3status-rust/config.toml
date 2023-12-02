@@ -39,8 +39,9 @@ format = " $icon_swap $swap_used_percents.eng(w:2) "
 block = "battery"
 format = " $icon $percentage "
 
-
-
+[[block]]
+block = "net"
+format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device "
 
 [[block]]
 block = "sound"
@@ -50,10 +51,11 @@ block = "time"
 interval = 5
 format = " $icon $timestamp.datetime() "
 
+
 [[block]]
 block = "maildir"
-interval = 60
+interval = 10
 inboxes = ["~/Mail/ai-automatica/INBOX/", "~/Mail/gmail/INBOX/", "~/Mail/ireen/INBOX/", "~/Mail/ur/INBOX/", "~/Mail/wu/INBOX/"]
-threshold_warning = 1
-threshold_critical = 10
+threshold_warning = 5
+threshold_critical =20
 display_type = "new"
