@@ -222,7 +222,7 @@ exec --no-startup-id "xrandr --output DP-0 --left-of HDMI-0"
 ## dropdown terminal
 # Add this to your i3 config (~/.config/i3/config) and restart i3 (Super+Shift+R)
 exec --no-startup-id "alacritty"
-for_window [class="Alacritty"] move scratchpad, resize set 2560 1440, border none
+for_window [class="Alacritty"] move scratchpad, resize set 3840 2160, border none
 ## for_window [class="Alacritty"] move scratchpad, move position mouse , resize set 2560 1440, border none
 
 bindsym F12 [class="Alacritty"] fullscreen toggle; [class="Alacritty"] scratchpad show, move position 0 0;
