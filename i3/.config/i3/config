@@ -215,8 +215,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-  # decrease screen brig
 ## autostart
 ## exec --no-startup-id "dropbox start"
 exec --no-startup-id "nextcloud"
-exec --no-startup-id "setxkbmap de"
-exec --no-startup-id "setxkbmap -layout us,de,ru && setxkbmap -option 'grp:shifts_toggle'"
+exec --no-startup-id "setxkbmap -layout de,us,ru && setxkbmap -option 'grp:shifts_toggle'"
 # exec --no-startup-id "xrandr --output DP-0 --left-of HDMI-0"
 
 

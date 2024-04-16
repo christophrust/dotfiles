@@ -37,7 +37,10 @@ format = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "battery"
-format = " $icon $percentage "
+format = "$icon $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
+missing_format = ""
 
 [[block]]
 block = "net"
