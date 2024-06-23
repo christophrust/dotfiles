@@ -54,11 +54,10 @@ block = "time"
 interval = 5
 format = " $icon $timestamp.datetime() "
 
-
 [[block]]
 block = "maildir"
-interval = 10
+interval = 60
 inboxes = ["~/Mail/ai-automatica/INBOX/", "~/Mail/gmail/INBOX/", "~/Mail/ireen/INBOX/", "~/Mail/ur/INBOX/", "~/Mail/wu/INBOX/"]
-threshold_warning = 5
-threshold_critical =20
+threshold_warning = 1
+threshold_critical = 10
 display_type = "new"

@@ -5,5 +5,3 @@
 	helper = cache --timeout=3600
 [http]
 	cookiefile = /home/cgr/.gitcookies
-[init]
-	defaultBranch = main
