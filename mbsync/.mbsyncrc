@@ -1,6 +1,6 @@
 IMAPStore Gmail-remote
 Host imap.gmail.com
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User christoph.g.rust@gmail.com
 PassCmd "pass email/mbsync@gmail.com"
@@ -63,7 +63,7 @@ Channel Gmail-drafts
 ## Uni Regensburg
 IMAPStore UR-remote
 Host imap.uni-regensburg.de
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User chr07774
 PassCmd "pass uni-stuff/uni-regensburg.de/chr07774"
@@ -128,7 +128,7 @@ CopyArrivalDate yes
 ## WU account
 IMAPStore WU-remote
 Host sslmail.wu.ac.at
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User crust
 PassCmd "pass uni-stuff/crust@wu.ac.at"
@@ -150,7 +150,7 @@ CopyArrivalDate yes
 ## AI-Automatica
 IMAPStore AIA-remote
 Host imap.ai-automatica.com
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User rust@ai-automatica.com
 PassCmd "pass email/rust@ai-automatica.com"
@@ -172,7 +172,7 @@ CopyArrivalDate yes
 ## dev-threads
 IMAPStore DT-remote
 Host w019ee00.kasserver.com
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User m06c72a8
 PassCmd "pass email/dev-threads.de/c.rust@dev-threads.de"
@@ -193,7 +193,7 @@ CopyArrivalDate yes
 ## IREEN
 IMAPStore IREEN-remote
 Host imap.gmail.com
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs LOGIN
 User cr@ireen.com
 PassCmd "pass email/mbsync@cr@ireen24.com"
@@ -265,5 +265,5 @@ Channel Gmail-spam
 Channel Gmail-drafts
 #Channel UR
 Channel DT
-Channel WU
+#Channel WU
 Channel AIA
