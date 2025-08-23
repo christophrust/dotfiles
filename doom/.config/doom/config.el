@@ -117,9 +117,12 @@ With prefix ARG ask for extra arguments."
    "dt"
    '((mu4e-sent-folder       . "/dt/Gesendet")
      (mu4e-trash-folder      . "/dt/Papierkorb")
-     (mu4e-drafts-folder     . "/dt/Entw&APw-rfe")
+     (mu4e-drafts-folder     . "/dt/Entwürfe")
      (smtpmail-smtp-user     . "c.rust@dev-threads.de")
      (user-mail-address      . "c.rust@dev-threads.de")
+     (mu4e-index-cleanup     . nil))
+   t)
+  (set-email-account!
    "ireen"
    '((mu4e-sent-folder       . "/ireen/Sent")
      (mu4e-trash-folder      . "/ireen/Trash")

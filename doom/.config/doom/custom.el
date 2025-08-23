@@ -21,7 +21,8 @@
  '(rustic-ansi-faces
    ["#E5E9F0" "#99324B" "#4F894C" "#9A7500" "#3B6EA8" "#97365B" "#398EAC" "#3B4252"])
  '(safe-local-variable-values
-   '((editorconfig-mode . t)
+   '((lsp-enabled-clients "ts-ls")
+     (editorconfig-mode . t)
      (flycheck-gcc-include-path . "/usr/share/R/include")))
  '(smtpmail-smtp-server "mail.ai-automatica.com")
  '(smtpmail-smtp-service 25)
